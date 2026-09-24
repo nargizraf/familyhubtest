@@ -1,0 +1,170 @@
+:root {
+  color: #1c2430;
+  background: #f3f5f7;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.45;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+a { color: #0f6e6b; }
+
+h1, h2 { margin: 0 0 0.35rem; font-weight: 650; }
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.1rem; }
+
+button, input, select { font: inherit; }
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+
+.sidebar {
+  background: #14332f;
+  color: #e7f3f1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sidebar nav { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.sidebar nav a {
+  color: #d5e8e4;
+  text-decoration: none;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+}
+
+.sidebar nav a.active { background: #1f4f49; color: white; }
+
+.userbox { margin-top: auto; display: flex; flex-direction: column; gap: 0.35rem; }
+.userbox span { color: #b7d0cb; font-size: 0.9rem; word-break: break-all; }
+
+.content { padding: 1.75rem; }
+
+.page-header, .filter-actions, .form-actions, .row-actions, .inline-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e4e8ee;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 1px 2px rgba(20, 32, 40, 0.04);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.stat span { display: block; color: #5c6b7a; font-size: 0.85rem; }
+.stat strong { font-size: 1.25rem; }
+.stat.danger strong { color: #9a3412; }
+.stats.compact { margin: 0; }
+
+.split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.muted { color: #5c6b7a; }
+.success { color: #0f6e6b; }
+.form-error { color: #9a3412; }
+
+.banner {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  margin: 0.75rem 0;
+}
+
+label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.92rem; }
+
+input, select {
+  border: 1px solid #cfd6df;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  background: white;
+}
+
+.button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:disabled { opacity: 0.6; cursor: not-allowed; }
+.button.primary { background: #0f6e6b; color: white; }
+.button.ghost { background: transparent; color: inherit; border: 1px solid currentColor; }
+.button.danger { background: #9a3412; color: white; }
+.sidebar .button.ghost { color: #e7f3f1; }
+
+.filters, .form-grid { display: grid; gap: 0.75rem; }
+.filters { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 0.75rem; }
+.form-grid { max-width: 520px; }
+.inline-form { margin-bottom: 0.75rem; align-items: end; }
+.inline-form label { flex: 1; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.55rem 0.35rem; border-bottom: 1px solid #eef1f5; }
+th { color: #5c6b7a; font-size: 0.82rem; font-weight: 600; }
+
+.bars { list-style: none; margin: 0.75rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.bar-label { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.92rem; }
+.bar-track { height: 10px; background: #e7eef0; border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: #0f6e6b; border-radius: 999px; }
+.bar-fill.alt { background: #7c9a96; }
+
+.list { list-style: none; margin: 0; padding: 0.4rem 1rem; }
+.list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #eef1f5;
+}
+.list li:last-child { border-bottom: 0; }
+
+.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+.auth-card { width: min(420px, 100%); display: flex; flex-direction: column; gap: 0.8rem; }
+.center { min-height: 100vh; display: grid; place-items: center; }
+
+@media (max-width: 800px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar nav { flex-direction: row; flex-wrap: wrap; }
+  .userbox { margin-top: 0; }
+  .split { grid-template-columns: 1fr; }
+  .content { padding: 1rem; }
+}
